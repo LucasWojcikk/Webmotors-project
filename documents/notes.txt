@@ -1,0 +1,21 @@
+# Anotações do projeto
+
+# Estrutura do banco:
+
+    # Tabela de veículo
+
+        # Criar Tabela:
+            CREATE TABLE veiculos_anunciados (
+                id int(5) auto_increment,
+                marca varchar(30),
+                modelo varchar(30),
+                cor varchar(15), 
+                ano int(4),
+                motor varchar(15),
+                placa varchar(8),
+                valor numeric (10,2), 
+                data_anuncio date,
+                usuario varchar(50),
+                primary key(id));
+                
+                
