@@ -1,0 +1,66 @@
+# Anotações do projeto
+
+
+# Processo de anúncio de carro
+    Usuario cria o anúncio, insere na tabela com status "pendente"
+    administrador vai ter uma tela onde vao ser listados todos anúncios com status de pendente, onde ele pode aprovar ou reprovar um anúncio
+    se reprovar, muda o status para reprovado e aparece para o usuario em "meus anúncios" como reprovado
+    se aprovado, vai aparecer para o usuario em "meus anuncios" como aprovado e então o anuncio ira aparecer no site
+
+
+# Estrutura do banco:
+
+    # Tabela de veículo
+
+        
+    
+Comandos SQL utilizados
+
+    # Acessar MySQL:
+        mysql -u root
+
+    # Criar database: 
+        create database webmotors;
+
+    # Acessar database:
+        use webmotors;
+
+    ## TABELA USUARIOS
+        # Criar tabela usuarios:
+            CREATE TABLE usuarios (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                nome VARCHAR(255) NOT NULL,
+                data_nascimento DATE NOT NULL,
+                cpf VARCHAR(11) NOT NULL UNIQUE,
+                estado VARCHAR(100) NOT NULL,
+                cidade VARCHAR(100) NOT NULL,
+                telefone VARCHAR(15) NOT NULL,
+                login VARCHAR(100) NOT NULL UNIQUE,
+                senha VARCHAR(255) NOT NULL,
+                tipo_usuario varchar(5)
+            );
+        
+        # SELECT
+            SELECT id, nome, data_nascimento, cpf, estado, cidade, telefone, login, senha, tipo_usuario FROM usuarios;
+
+
+    ## TABELA VEÍCULOS
+        # Criar Tabela:
+            CREATE TABLE veiculos (
+                id int auto_increment primary key,
+                marca varchar(30) NOT NULL,
+                modelo varchar(30) NOT NULL,
+                cor varchar(15) NOT NULL, 
+                ano int(4) NOT NULL,
+                motor varchar(15) NOT NULL,
+                placa varchar(8) NOT NULL UNIQUE,
+                valor numeric (10,2) NOT NULL, 
+                data_anuncio date NOT NULL,
+                usuario varchar(50) NOT NULL,
+                foto_1 MEDIUMBLOB NOT NULL,
+                foto_2 MEDIUMBLOB NOT NULL,
+                status varchar(10) NOT NULL
+            );
+
+        # SELECT: 
+            SELECT id, marca, modelo, cor, ano, motor, placa, valor, data_anuncio, usuario, status FROM veiculos;
