@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $title = "Anunciar veículo";
     include '../../includes/header.php';
     include '../../config/config.php';
@@ -21,7 +22,7 @@
             $motor = $_POST["motor-veiculo"];
 
             // tratando os dados da coluna valor
-            $valor = $_POST["valor-veiculo"];
+            $valor = $_POST["valor-veiculo"];                                                                   
             $valor = str_replace('.', '', $valor); // Remove todos os pontos
             $valor = str_replace(',', '.', $valor);
 
