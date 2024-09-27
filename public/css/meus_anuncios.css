@@ -1,0 +1,15 @@
+.card{
+    width:auto;
+    height: 120px;
+    background-color: rgb(104, 98, 98);
+    color: white;
+    margin: 20px;
+}
+
+.img{
+    background-color: black;
+    width: 80px;
+    height: 80px;
+    justify-self: left;
+    margin: 20px;
+}

@@ -10,7 +10,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">WebMotors</a>
+            <a class="navbar-brand" href="pagina_inicial.php">WebMotors</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,20 +26,23 @@
 
                         <?php elseif ($_SESSION["nivel_usuario"] == "user"): ?>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="anuncios.php">Comprar</a>
+                                <a class="nav-link active" aria-current="page" href="comprar.php">Comprar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Vender</a>
+                                <a class="nav-link active" aria-current="page" href="anunciar_veiculo.php">Vender</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" aria-disabled="true">Sobre</a>
+                                <a class="nav-link active" aria-current="page" href="meus_anuncios.php">Meus anúncios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Sobre</a>
                             </li>
                         <?php endif; ?>
 
                     <?php else: ?>
                         <!-- Visitante não autenticado -->
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="anuncios.php">Comprar</a>
+                            <a class="nav-link" aria-current="page" href="comprar.php">Comprar</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#">Sobre</a>

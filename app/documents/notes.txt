@@ -67,5 +67,34 @@ Comandos SQL utilizados
 
             status veiculos:
             Pendente
-            Valido
+            Ativo
             Negado
+
+
+
+Estrutura projeto - 
+    Tipos de usuario = 
+        # admin - usuário administrador da página
+        # user - usuario comum cadastrado
+        # sem registro - usuario comum não cadastrado
+
+    Paginas que o projeto terá:
+
+    # Tela inicial - Todos tem acesso
+    
+    # Registrar usuario - sem registro
+
+    # Login - Todos tem acesso
+
+    # Perfil usuario - admin/user
+    
+    # Comprar veiculos - sem registros / user
+
+    # Anunciar veiculos - user
+
+    # lista de veiculos usuario - user
+
+    # anuncio veiculo - Todos tem acesso
+
+    # 
+

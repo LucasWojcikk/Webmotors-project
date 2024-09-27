@@ -8,85 +8,109 @@
 }
 
 .card {
-    height: 360px;
-    width: 270px;
-    background-color: #000;
-    border-radius: 10px;
-    margin: 10px; /* Remove margin excessiva */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    padding-bottom: 20px;
+    height: 360px; /* Mantém a altura original do card */
+    width: 270px; /* Mantém a largura original do card */
+    background-color: #000; /* Cor de fundo do card */
+    border-radius: 10px; /* Arredondamento das bordas */
+    margin: 10px; /* Margem entre os cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra do card */
+    overflow: hidden; /* Oculta conteúdo que excede a borda do card */
+    cursor: pointer; /* Muda o cursor ao passar sobre o card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação na transformação */
+    text-align: center; /* Centraliza o texto dentro do card */
+    padding-bottom: 20px; /* Espaçamento na parte inferior do card */
 }
 
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
 }
 
 .image {
-    height: 200px;
-    width: 100%;
-    background-color: #fff;
+    position: relative; /* Permite posicionar os botões em relação à imagem */
+    height: 200px; /* Altura da imagem */
+    width: 100%; /* Largura total do card */
+    background-color: #fff; /* Cor de fundo da imagem */
 }
 
 .image img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+    height: 100%; /* Altura total da div imagem */
+    width: 100%; /* Largura total da div imagem */
+    object-fit: cover; /* Garante que a imagem cubra completamente a div */
+}
+
+/* Estilizando os botões de alternância */
+.arrow-button {
+    position: absolute; /* Posiciona os botões em relação à imagem */
+    top: 50%; /* Centraliza verticalmente na imagem */
+    transform: translateY(-50%); /* Ajusta para ficar perfeitamente centralizado */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    border: none; /* Remove bordas dos botões */
+    color: white; /* Cor do texto dos botões */
+    font-size: 18px; /* Tamanho da fonte dos botões */
+    padding: 10px; /* Espaçamento interno dos botões */
+    cursor: pointer; /* Muda o cursor ao passar sobre os botões */
+    z-index: 10; /* Garante que os botões fiquem acima da imagem */
+    transition: background-color 0.3s ease; /* Efeito de transição na cor de fundo */
+}
+
+.arrow-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Fica mais escuro ao passar o mouse */
+}
+
+/* Posicionando o botão da esquerda */
+.arrow-button.left {
+    left: 10px; /* Afastamento da borda esquerda */
+}
+
+/* Posicionando o botão da direita */
+.arrow-button.right {
+    right: 10px; /* Afastamento da borda direita */
 }
 
 .name, .value {
-    color: white;
-    text-align: center;
-    margin: 0;
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    margin: 0; /* Remove margens do texto */
 }
 
 .name {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 10px;
+    font-size: 22px; /* Tamanho da fonte do nome do carro */
+    font-weight: bold; /* Negrito no nome do carro */
+    margin-top: 10px; /* Espaçamento acima do nome do carro */
 }
 
 .value {
-    font-size: 18px;
-    margin-top: 5px;
+    font-size: 18px; /* Tamanho da fonte para o valor */
+    margin-top: 5px; /* Espaçamento acima do valor */
 }
 
 /* Botão Estilizado e Centralizado */
 .btn {
-    background-color: #ff0000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    display: inline-block;
-    text-align: center;
+    background-color: #ff0000; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove bordas do botão */
+    border-radius: 5px; /* Arredondamento das bordas do botão */
+    padding: 6px 12px; /* Espaçamento interno do botão */
+    font-size: 14px; /* Tamanho da fonte do botão */
+    font-weight: bold; /* Negrito no texto do botão */
+    margin-top: 15px; /* Espaçamento acima do botão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito de transição */
+    display: inline-block; /* Exibição em bloco do botão */
+    text-align: center; /* Centraliza o texto do botão */
 }
 
 .btn:hover {
-    background-color: #cc0000;
-    transform: scale(1.05);
+    background-color: #cc0000; /* Fica mais escuro ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
 }
 
 .btn:active {
-    transform: scale(1);
+    transform: scale(1); /* Retorna ao tamanho original quando clicado */
 }
 
 /* Centralizar o botão */
 .card .btn {
-    margin: 15px auto;
-}
-
-.image {
-    position: relative; /* Para que os botões possam ser posicionados em relação à imagem */
-    max-width: 100%;
-    max-height: 200px;
+    margin: 15px auto; /* Margem automática para centralizar o botão */
 }
