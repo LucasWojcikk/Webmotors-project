@@ -22,12 +22,12 @@ if (@$_REQUEST['botao'] == 'Anunciar') {
         $data_anuncio = date('Y/m/d');
         $usuario = 'lucaswojcik';
 
-        $foto_1 = 'teste';
-        $foto_2 = 'teste';
+        $foto_1 = null;
+        $foto_2 = null;
 
         if (isset($_FILES['imagem_input'])) {
-            echo "NOME DO ARQUIVO 1: ". $_FILES["imagem_input"]["tmp_name"][0];
-            echo "NOME DO ARQUIVO 2: ". $_FILES["imagem_input"]["tmp_name"][1];
+            $foto_1 = file_get_contents($_FILES["imagem_input"]["tmp_name"][0]);
+            $foto_2 = file_get_contents($_FILES["imagem_input"]["tmp_name"][1]);
         }
 
         // Inserção no banco de dados

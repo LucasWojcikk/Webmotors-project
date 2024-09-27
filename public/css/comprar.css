@@ -84,3 +84,9 @@
 .card .btn {
     margin: 15px auto;
 }
+
+.image {
+    position: relative; /* Para que os botões possam ser posicionados em relação à imagem */
+    max-width: 100%;
+    max-height: 200px;
+}
