@@ -19,12 +19,14 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <!-- Valida se o usuário está logado -->
                     <?php if (isset($_SESSION["nivel_usuario"])): ?>
+
                         <!-- Botões para admin -->
                         <?php if ($_SESSION["nivel_usuario"] == "admin"): ?>
                             <!-- Não exibe links de "Comprar" e "Sobre" para admin -->
+
                         <?php elseif ($_SESSION["nivel_usuario"] == "user"): ?>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Comprar</a>
+                                <a class="nav-link active" aria-current="page" href="anuncios.php">Comprar</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Vender</a>
@@ -33,13 +35,14 @@
                                 <a class="nav-link disabled" aria-disabled="true">Sobre</a>
                             </li>
                         <?php endif; ?>
+
                     <?php else: ?>
                         <!-- Visitante não autenticado -->
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Comprar</a>
+                            <a class="nav-link" aria-current="page" href="anuncios.php">Comprar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Sobre</a>
+                            <a class="nav-link" aria-current="page" href="#">Sobre</a>
                         </li>
                     <?php endif; ?>
                 </ul>
@@ -49,13 +52,16 @@
                         <?php if ($_SESSION["nivel_usuario"] == "admin"): ?>
                             <a href="admin_dashboard.php" class="btn btn-outline-info me-2">Admin Dashboard</a>
                             <a href="logout.php" class="btn btn-outline-danger me-2">Sair</a>
+
                         <?php elseif ($_SESSION["nivel_usuario"] == "user"): ?>
                             <a href="user_profile.php" class="btn btn-outline-info me-2">Meu Perfil</a>
                             <a href="logout.php" class="btn btn-outline-danger me-2">Sair</a>
                         <?php endif; ?>
+
                     <?php else: ?>
                         <a class="btn btn-outline-success" href="login.php">Entrar</a>
                     <?php endif; ?>
+
                 </div>
             </div>
         </div>

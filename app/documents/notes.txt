@@ -64,3 +64,8 @@ Comandos SQL utilizados
 
         # SELECT: 
             SELECT id, marca, modelo, cor, ano, motor, placa, valor, data_anuncio, usuario, status FROM veiculos;
+
+            status veiculos:
+            Pendente
+            Valido
+            Negado

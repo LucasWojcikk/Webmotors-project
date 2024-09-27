@@ -1,6 +1,6 @@
 <?php
     $title = "Registre-se";
-    include '../../includes/header.php';
+    include '../../components/header.php';
     include '../../config/config.php';
 
 
