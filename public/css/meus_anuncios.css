@@ -1,15 +1,24 @@
-.card{
-    width:auto;
+.card {
+    width: auto;
     height: 120px;
     background-color: rgb(104, 98, 98);
     color: white;
     margin: 20px;
+    display: flex;
+    align-items: center;
 }
 
-.img{
+.img {
     background-color: black;
     width: 80px;
     height: 80px;
-    justify-self: left;
     margin: 20px;
+    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites */
+}
+
+.img img {
+    width: 100%;    /* Faz a imagem se ajustar completamente à largura da div */
+    height: 100%;   /* Faz a imagem se ajustar completamente à altura da div */
+    object-fit: cover; /* Cobre o espaço da div, possivelmente cortando a imagem */
+    display: block;
 }

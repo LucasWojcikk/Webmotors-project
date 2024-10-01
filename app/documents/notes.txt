@@ -55,7 +55,7 @@ Comandos SQL utilizados
                 motor varchar(15) NOT NULL,
                 placa varchar(8) NOT NULL UNIQUE,
                 valor numeric (10,2) NOT NULL, 
-                data_anuncio date NOT NULL,
+                data_anuncio datetime NOT NULL,
                 usuario varchar(50) NOT NULL,
                 foto_1 MEDIUMBLOB NOT NULL,
                 foto_2 MEDIUMBLOB NOT NULL,

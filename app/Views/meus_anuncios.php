@@ -1,4 +1,4 @@
-<?php 
+<?php
     session_start();
     $title = "Meus anuncios";
 ?>
@@ -6,15 +6,17 @@
 <?php if (
     isset($_SESSION["nivel_usuario"])
     and $_SESSION["nivel_usuario"] == "user"
-    ):
-    include '../../components/header.php'; 
-    include '../../config/config.php'; 
+):
+    include '../../components/header.php';
+    include '../../config/config.php';
 ?>
-    
-<html>
+
+    <html>
+
     <head>
-    <link href="../../public/css/meus_anuncios.css" rel="stylesheet">
+        <link href="../../public/css/meus_anuncios.css" rel="stylesheet">
     </head>
+
     <body>
         <div class="cards-container">
             <?php
@@ -29,22 +31,24 @@
 
             $retorno_veiculos = mysqli_query($con, $query_veiculos);
             while ($carro = mysqli_fetch_array($retorno_veiculos)) {
-                // $foto1 = 'data:image/jpeg;base64,' . base64_encode($carro['foto_1']);
+                $foto1 = 'data:image/jpeg;base64,' . base64_encode($carro['foto_1']);
             ?>
                 <div class="card">
                     <div class="img">
-                        <h3>img aq</h3>
+                        <img src="<?php echo $foto1; ?>" alt="Imagem do veículo" style="width: 80px; height: 80px;" />
                     </div>
                 </div>
+
             <?php
             }
             ?>
         </div>
     </body>
-</html>
-    
+
+    </html>
+
 
 <?php else:
-     include '../../components/requisicao_login.php'; 
+    include '../../components/requisicao_login.php';
 ?>
 <?php endif; ?>
