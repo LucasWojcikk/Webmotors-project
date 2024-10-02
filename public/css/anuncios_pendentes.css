@@ -91,6 +91,11 @@ h1 {
     color: #2a2727;
     display: flex;
   }
+  h2 {
+    margin: 40px;
+    color: #2a2727;
+    display: flex;
+  }
   
   .car-content {
     background-color: #d9d9d9;
