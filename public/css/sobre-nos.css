@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  height: 1033px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  padding: 30px;
+}
+
+section h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+section p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.value-item {
+  flex: 1;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.value-item h3 {
+  font-size: 1.5em;
+  color: #ff0000;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #333;
+  color: #fff;
+}

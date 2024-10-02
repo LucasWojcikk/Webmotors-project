@@ -38,6 +38,7 @@ $title = "Meu perfil";
                 <div class="content">
                     <h1>Perfil</h1>
                     <div class="car-content">
+                        <img src="img/user-red.svg" alt="Foto de perfil" />
                         <div class="user-info">
                             <p>Nome: <span id="nome"><?php echo $nome; ?></span></p>
                             <p>Permissão: <span id="permissao"><?php echo $tipo_usuario; ?></span></p>

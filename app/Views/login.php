@@ -72,10 +72,9 @@
                     <div class="input-container"><input name="usuario" placeholder="Digite seu usuario..."><span></span></div>
                     <div class="input-container"><input name="senha" type="password" placeholder="Digite sua senha..."></div>
                     <button name="botao" value="Entrar" type="submit" class="submit">Entrar</button>
-                    <p class="signup-link">Não tem uma conta? <a href="#" data-toggle="modal" data-target="#registerModal">Registre-se</a></p>
+                    <p class="signup-link">Não tem uma conta? <a href="registrar_usuario.php" data-toggle="modal" data-target="#registerModal">Registre-se</a></p>
                 </form>
             </div>
         </div>
     </body>
-
 </html>

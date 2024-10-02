@@ -35,7 +35,7 @@
                                 <a class="nav-link active" aria-current="page" href="meus_anuncios.php">Meus anúncios</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Sobre</a>
+                                <a class="nav-link active" aria-current="page" href="sobre-nos.php">Sobre</a>
                             </li>
                         <?php endif; ?>
 
@@ -45,7 +45,7 @@
                             <a class="nav-link" aria-current="page" href="comprar.php">Comprar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Sobre</a>
+                            <a class="nav-link" aria-current="page" href="sobre-nos.php">Sobre</a>
                         </li>
                     <?php endif; ?>
                 </ul>
@@ -53,11 +53,11 @@
                 <div class="d-flex ms-auto"> <!-- Container para botões de controle -->
                     <?php if (isset($_SESSION["nivel_usuario"])): ?>
                         <?php if ($_SESSION["nivel_usuario"] == "admin"): ?>
-                            <a href="admin_dashboard.php" class="btn btn-outline-info me-2">Admin Dashboard</a>
+                            <a href="anuncios_pendentes.php" class="btn btn-outline-info me-2">Admin Dashboard</a>
                             <a href="logout.php" class="btn btn-outline-danger me-2">Sair</a>
 
                         <?php elseif ($_SESSION["nivel_usuario"] == "user"): ?>
-                            <a href="user_profile.php" class="btn btn-outline-info me-2">Meu Perfil</a>
+                            <a href="perfil_usuario.php" class="btn btn-outline-info me-2">Meu Perfil</a>
                             <a href="logout.php" class="btn btn-outline-danger me-2">Sair</a>
                         <?php endif; ?>
 
