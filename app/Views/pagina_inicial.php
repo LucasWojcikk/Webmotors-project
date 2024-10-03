@@ -8,12 +8,11 @@ include '../../components/header.php';
 
 <head>
     <link href="../../public/css/login.css" rel="stylesheet">
-    <link href="../../public/css/pagina_incial.css" rel="stylesheet"> <!-- Link para um arquivo CSS da home -->
+    <link href="../../public/css/pagina_incial.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="wrapper">
-        <!-- Hero Section (destaque da página) -->
         <section class="hero-section">
             <div class="container">
                 <h1>Bem-vindo à Web Motors!</h1>
@@ -23,7 +22,6 @@ include '../../components/header.php';
         </section>
     </div>
 
-    <!-- Rodapé -->
     <footer>
         <div class="container">
             <p>&copy; 2024 Web Motors. Todos os direitos reservados.</p>
