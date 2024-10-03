@@ -1,0 +1,32 @@
+.btn.btn-outline-success {
+    background-color: #910000; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto */
+    border: 1px solid #910000; /* Borda vermelha */
+}
+
+.btn.btn-outline-success:hover {
+    color: rgb(0, 0, 0); /* Cor do texto ao passar o mouse */
+}
+
+.btn.btn-outline-success:focus, 
+.btn.btn-outline-success:active {
+    background-color: #910000; /* Mantém a cor vermelha ao clicar */
+    color: white; /* Cor do texto */
+    border: 1px solid #910000; /* Borda vermelha */
+}
+
+
+.btn.btn-outline-info {
+    background-color: rgb(0, 153, 255);
+}
+
+
+.btn.btn-outline-danger{
+    background-color: rgb(168, 0, 0);
+    color: white;
+}
+
+.btn.btn-outline-danger:hover{
+    color: rgb(0, 0, 0);
+}
+

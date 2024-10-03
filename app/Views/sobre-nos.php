@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $title = 'Sobre Nós';
     include '../../components/header.php';
 ?>

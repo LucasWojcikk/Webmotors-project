@@ -1,0 +1,53 @@
+/* home.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Faz o corpo ocupar a altura mínima da tela */
+}
+
+.wrapper {
+    flex: 1; /* Faz a seção ocupar o espaço disponível */
+    display: flex; /* Para garantir que a hero-section expanda corretamente */
+    flex-direction: column; /* Mantém a estrutura vertical */
+}
+
+.hero-section {
+    background-color: #910000; /* Vermelho */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    text-align: center;
+    padding: 50px 20px;
+    height: calc(100vh - 80px); /* Ajuste a altura subtraindo a altura do rodapé (80px como exemplo) */
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%; /* Garante que o rodapé ocupe toda a largura */
+    position: relative;
+    bottom: 0;
+    height: 80px; /* Defina uma altura fixa para o rodapé, se necessário */
+}

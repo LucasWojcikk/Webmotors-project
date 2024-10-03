@@ -15,6 +15,7 @@
         $motor = $dados_veiculo["motor"];
         $placa = $dados_veiculo["placa"];
         $valor = $dados_veiculo["valor"];
+        $valor = 'R$ ' . number_format($valor, 2, ',', '.');
         $data_anuncio = $dados_veiculo["data_anuncio"];
         $usuario = $dados_veiculo["usuario"];
         $foto_1 = 'data:image/jpeg;base64,' . base64_encode($dados_veiculo['foto_1']);
@@ -56,6 +57,7 @@
                             <p>Cor <span id="cor"> <?php echo $cor; ?></span></p>
                             <p>Ano <span id="ano"><?php echo $ano; ?></span></p>
                             <p>Motor <span id="motor"><?php echo $motor; ?></span></p>
+                            <p>Inicial placa <span id="placa"><?php echo strtoupper($placa[0]); ?></span></p>
                             </div>
                         </div>
                         </div>
@@ -63,7 +65,7 @@
                         <!-- Card de preço -->
                         <div class="price-card">
                         <h2>VALOR PEDIDO</h2>
-                        <p>R$ <span id="preco"><?php echo $valor; ?></span></p>
+                        <p><span id="preco"><?php echo $valor; ?></span></p>
                         </div>
                     </div>
                     
