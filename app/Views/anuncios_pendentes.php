@@ -16,7 +16,7 @@ if (@$_REQUEST['botao']) {
 
     $query_update_status = "UPDATE veiculos SET status = 'recusado' WHERE id = '$id_aprovar';";
     $retorno_update_status = mysqli_query($con, $query_update_status);
-    echo "Objeto recusado com sucesso!";
+    // echo "Objeto recusado com sucesso!";
 }
 ?>
 

@@ -11,6 +11,13 @@ if (@$_REQUEST['apagar']) {
     echo "Objeto recusado com sucesso!";
 }
 
+// if (@$_REQUEST['editar']) {
+//     $id_aprovar = $_REQUEST["editar"];
+
+//     // $query_update_status = "DELETE FROM veiculos WHERE id = '$id_aprovar';";
+//     // $retorno_update_status = mysqli_query($con, $query_update_status);
+//     // echo "Objeto recusado com sucesso!";
+// }
 ?>
 
 <?php if (
@@ -67,6 +74,7 @@ if (@$_REQUEST['apagar']) {
                         $ano = $carro['ano'];
                         $motor = $carro['motor'];
                         $valor = $carro['valor'];
+                        $valor = 'R$ ' . number_format($valor, 2, ',', '.');
                         $status_anuncio = $carro['status'];
                 ?>
 
@@ -86,16 +94,20 @@ if (@$_REQUEST['apagar']) {
                                     <div class="price-container">
                                         <div class="price-content">
                                             <h2>VALOR PEDIDO</h2>
-                                            <p>R$: <span id="preco"><?php echo $valor; ?></span></p>
+                                            <p><span id="preco"><?php echo $valor; ?></span></p>
                                         </div>
                                     </div>
                                     <div class="options-content">
                                         <div class="approve"></div>
                                         <div class="admin-icon">
+                                            <h3>Status: <?php echo ucfirst($status_anuncio); ?></h3>
+
                                             <div class="approved">
-                                                <h3>Status: <?php echo ucfirst($status_anuncio); ?></h3>
                                                 <!-- <a href=""><img src="img/approved-black.svg" alt="aprovado" /></a> -->
-                                                <!-- <button type="submit" name="botao" value=<?php echo $id ?>><img src="img/approved-black.svg" alt="aprovado" /></button> -->
+                                                <button type="submit" name="editar" onclick="window.location.href='editar_anuncio.php?id=<?php echo $id; ?>'; return false;">
+                                                    <img src="img/editar.png" alt="editar" />
+                                                </button>
+
                                             </div>
                                             <div class="separator"></div>
                                             <div class="bin">

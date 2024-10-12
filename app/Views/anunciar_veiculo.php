@@ -1,67 +1,68 @@
 <?php
-    session_start();
-    $title = "Anunciar veículo";
-    include '../../components/header.php';
-    include '../../config/config.php';
-    date_default_timezone_set("America/Sao_Paulo");
+session_start();
+$title = "Anunciar veículo";
+include '../../components/header.php';
+include '../../config/config.php';
+date_default_timezone_set("America/Sao_Paulo");
 
-    if (@$_REQUEST['botao'] == 'Anunciar') {
-        $placa = $_POST["placa-veiculo"];
+if (@$_REQUEST['botao'] == 'Anunciar') {
+    $placa = $_POST["placa-veiculo"];
 
-        $query_valida_placa = "SELECT id FROM veiculos WHERE placa = '$placa'";
-        $retorno_validacao_placa = mysqli_query($con, $query_valida_placa);
+    $query_valida_placa = "SELECT id FROM veiculos WHERE placa = '$placa'";
+    $retorno_validacao_placa = mysqli_query($con, $query_valida_placa);
 
-        if (mysqli_num_rows($retorno_validacao_placa) == 0) {
-            $marca = $_POST["marca-veiculo"];
-            $modelo = $_POST["modelo-veiculo"];
-            $cor = $_POST["cor-veiculo"];
-            $ano = $_POST["ano-veiculo"];
-            $motor = $_POST["motor-veiculo"];
-            $valor = str_replace('.', '', $_POST["valor-veiculo"]);
-            $valor = str_replace(',', '.', $valor);
-            $data_anuncio = date('Y-m-d G:i:s');
-            
-            $usuario = $_SESSION["nome_usuario"];
-            
-            $foto_1 = null;
-            $foto_2 = null;
+    if (mysqli_num_rows($retorno_validacao_placa) == 0) {
+        $marca = $_POST["marca-veiculo"];
+        $modelo = $_POST["modelo-veiculo"];
+        $cor = $_POST["cor-veiculo"];
+        $ano = $_POST["ano-veiculo"];
+        $motor = $_POST["motor-veiculo"];
+        $valor = str_replace('.', '', $_POST["valor-veiculo"]);
+        $valor = str_replace(',', '.', $valor);
+        $data_anuncio = date('Y-m-d G:i:s');
 
-            if (isset($_FILES['imagem_input'])) {
-                $foto_1 = file_get_contents($_FILES["imagem_input"]["tmp_name"][0]);
-                $foto_2 = file_get_contents($_FILES["imagem_input"]["tmp_name"][1]);
-            }
+        $usuario = $_SESSION["nome_usuario"];
 
-            // Inserção no banco de dados
-            $query_insert_veiculo = (
-                "INSERT INTO veiculos (
+        $foto_1 = null;
+        $foto_2 = null;
+
+        if (isset($_FILES['imagem_input'])) {
+            $foto_1 = file_get_contents($_FILES["imagem_input"]["tmp_name"][0]);
+            $foto_2 = file_get_contents($_FILES["imagem_input"]["tmp_name"][1]);
+        }
+
+        // Inserção no banco de dados
+        $query_insert_veiculo = (
+            "INSERT INTO veiculos (
                     marca, modelo, cor, ano, motor, placa, valor, data_anuncio, usuario, foto_1, foto_2, status
                 ) VALUES (
                     '$marca', '$modelo', '$cor', '$ano', '$motor', '$placa', '$valor', '$data_anuncio', '$usuario', 
                     '" . mysqli_real_escape_string($con, $foto_1) . "', 
                     '" . mysqli_real_escape_string($con, $foto_2) . "', 'pendente'
                 )"
-            );
+        );
 
-            $retorno_insert_veiculo = mysqli_query($con, $query_insert_veiculo);
+        $retorno_insert_veiculo = mysqli_query($con, $query_insert_veiculo);
 
-            if ($retorno_insert_veiculo) {
-                echo ("Seu anúncio foi enviado para análise!");
-            } else {
-                echo ("Não foi possível gerar seu anúncio no momento, tente novamente mais tarde.");
-                echo mysqli_error($con);
-            }
-
-            mysqli_free_result($retorno_validacao_placa);
+        if ($retorno_insert_veiculo) {
+            header("Location: meus_anuncios.php");
+            exit();
         } else {
-            echo "A placa já está cadastrada.";
+            echo ("Não foi possível gerar seu anúncio no momento, tente novamente mais tarde.");
+            echo mysqli_error($con);
         }
+
+        mysqli_free_result($retorno_validacao_placa);
+    } else {
+        echo "A placa já está cadastrada.";
     }
+}
 ?>
 
 <?php if (
     isset($_SESSION["nivel_usuario"])
     and $_SESSION["nivel_usuario"] == "user"
-    ): 
+):
 ?>
     <html>
 
@@ -142,6 +143,7 @@
 
                     <div class="d-flex justify-content-start mt-3">
                         <button type="submit" class="btn btn-primary" name="botao" value="Anunciar">Anunciar</button>
+
                         <a href="pagina_inicial.php" class="btn btn-primary ms-2">Cancelar</a>
                     </div>
             </form>
@@ -150,6 +152,6 @@
 
     </html>
 <?php else:
-     include '../../components/requisicao_login.php'; 
+    include '../../components/requisicao_login.php';
 ?>
 <?php endif; ?>

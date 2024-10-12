@@ -18,8 +18,12 @@
 
 .btn.btn-outline-info {
     background-color: rgb(0, 153, 255);
+    color: white;
 }
 
+.btn.btn-outline-info:hover{
+    color: black;
+}
 
 .btn.btn-outline-danger{
     background-color: rgb(168, 0, 0);
